@@ -1,6 +1,9 @@
 # JSF web application
+## Requirement:
+- execute sql file
 
-## Java files:
+## Overview: 
+### Java files:
 1. cdi package
 	- MainPageBean.java:   cdi bean servers as an interface between MainPage and ejb.
 	- MoviePageBean.java:  cdi bean servers as an interface between MoviePage and ejb.
@@ -21,7 +24,7 @@
 	- Theater.java:  Entity class for every theater available
 
 
-## Web files:
+### Web files:
 
 1. Resources/image directory in which images are saved
 
@@ -31,5 +34,5 @@
 	- ShowtimePage.xhtml: provides form for billing information and showtime selection
 	- TheaterPage.xhtml:  show movie list for a selected theater location
 
-## JSFPage Logic flow:
+### JSFPage Logic flow:
 MainPage --> TheaterPage --> MoviePage --> ShowtimePage
