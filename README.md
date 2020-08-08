@@ -1,6 +1,6 @@
 # JSF web application
 
-## Java Files
+## Java files:
 1. cdi package
 	- MainPageBean.java:   cdi bean servers as an interface between MainPage and ejb.
 	- MoviePageBean.java:  cdi bean servers as an interface between MoviePage and ejb.
@@ -10,7 +10,7 @@
 
 2. ejb package
 	- theaterEJB.java: 
-	Enterprise java bean in which name query methods are provided to query data from the database. Also, 	entity manager is created in this file to persist entity if needed.				
+	Enterprise java bean in which name query methods are provided to query data from the database. Entity manager is created in this file to persist entity  	 if needed.				
 
 
 3. Entity package
@@ -21,7 +21,7 @@
 	- Theater.java:  Entity class for every theater available
 
 
-## Web files contains:
+## Web files:
 
 1. Resources/image directory in which images are saved
 
@@ -31,5 +31,5 @@
 	- ShowtimePage.xhtml: provides form for billing information and showtime selection
 	- TheaterPage.xhtml:  show movie list for a selected theater location
 
-## Page Logic flow:
+## JSFPage Logic flow:
 MainPage --> TheaterPage --> MoviePage --> ShowtimePage
