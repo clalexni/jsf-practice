@@ -1,4 +1,4 @@
-###JSF web application
+# JSF web application
 
 ## Java Files
 1. cdi package
