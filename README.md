@@ -1,7 +1,6 @@
-### The Project contains java files and web files.
+###JSF web application
 
-
-## Java Files contain 3 packages:
+## Java Files
 1. cdi package
 	- MainPageBean.java:   cdi bean servers as an interface between MainPage and ejb.
 	- MoviePageBean.java:  cdi bean servers as an interface between MoviePage and ejb.
