@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Movie</title>
+    </h:head>
+    <h:body style="background: url(../resources/image/Weathering+With+You.png); background-size: cover; background-repeat: no-repeat; background-color: #171717">
+        <h:form>
+            <h:panelGrid columns="6" style="color: white; margin-top: 600px">
+                <h:outputText style="font-size:50px" value="#{moviePageBean.movieTitle}"/>
+                <h:outputText value="  "/>
+                <h:outputText value="#{moviePageBean.movieYear}"/>
+                <h:outputText value="  "/>
+                <h:commandButton value="Pick Another Movie" style="font-size:20px" action="#{theaterPageBean.backFromMoviePage()}"/>
+                <h:commandButton value="Pick ShowTime" style="font-size:20px" action="#{showtimeBean.getShowTime(moviePageBean.movie, theaterPageBean.theater)}"/>
+            </h:panelGrid>
+            <h:panelGrid>
+                <h:outputText style="color:white; font-size:20px; margin-top: 100px" value="#{moviePageBean.movieDescription}"/>
+            </h:panelGrid>
+            
+        </h:form>
+    </h:body>
+</html>
+

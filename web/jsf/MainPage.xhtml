@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Welcome Page</title>
+    </h:head>
+    <h:body style="background-color: #323232">
+        <h:form style="display: block; text-align: center">
+            <h1 style="margin: 250px auto 20px auto; font-size: 45px; color: #FD6400; font-family: sans-serif"> 🍿 Welcome to the Movie Club  🍿</h1> 
+            <h4 style="color: whitesmoke;font-weight: normal;font-size:25px;color:yellow;">Our Theaters feature <br/><img style="width:100px;margin-top: 10px" src="../resources/image/dolby.png"/> <br/>and free popcorn</h4>
+            <h4 style="color: whitesmoke;font-weight: normal;font-size:20px">Enter your zip code to find our theaters around you: </h4>
+            <h:panelGrid style="margin: 20px auto 20px auto" columns ="5">
+                <h:inputText validatorMessage="Invalid Zip Code"
+                             requiredMessage="Your zip code is required to search"                     
+                             required="true"
+                             style="background-color: rgba(235,235,235,1);font-size:20px">
+                    <f:validateLength minimum="5" maximum="5"/>
+                </h:inputText>
+            
+                <h:commandButton value="Search" style="background-color: rgba(235,235,235,1); font-size:20px" action="#{mainPageBean.setTheaters()}"/>
+            </h:panelGrid>
+            <h:outputText style="text-align:center; color:white;font-size: 20px" value="#{mainPageBean.selectTheaterMessage}"/>
+            <h:dataTable style="margin: 0 auto" value="#{mainPageBean.theaterList}" var="theater">
+                 <h:column>
+                     <h:commandLink action="#{theaterPageBean.setTheater(theater)}"
+                                    style="color: #FD6400; font-size: 20px" 
+                                    value="#{theater.location}" />
+                </h:column>    
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

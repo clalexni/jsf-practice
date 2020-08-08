@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Showtime</title>
+    </h:head>
+    <h:body style="background-color: buttonface">
+        <h:form style="display: block; text-align: center">
+            <h3 style="margin: 100px auto 100px auto; font-size: 45px;">
+                Select Your Showtime and Enter Your Billing Information
+            </h3>
+            <h3 style="color:red">IMPORTANT:</h3>
+            <h6 style="font-size: 20px; color:red">Free popcorn is not available due to the corona virus pandemic.<br/>
+                Face mask is required to enter.<br/>
+                Tickets Are now $10 each!</h6>
+            
+            <h:panelGrid style="border-style: solid; border-color: #FD6400; margin:auto;font-size: 20px" columns="4">
+                <h:outputLabel style="color:green" value="Select Showtime"/>
+                <h:selectOneMenu value="10:00 ~ 12:00">               
+                    <f:selectItems value="#{showtimeBean.showTime}" var="time" itemLabel="#{time.schedule}" itemValue="#{showtimeBean.selectedTime}" />
+                </h:selectOneMenu>   
+                <h:outputLabel value="      How many tickets: "/>
+                <h:inputText required="true" 
+                             validatorMessage="Invalid entry"
+                             requiredMessage="Tickets are required"
+                             value="#{showtimeBean.tickets}">
+                    <f:validateLength minimum="1" maximum="10000"/>
+                </h:inputText>
+            </h:panelGrid> 
+            
+            <h:panelGrid columns="6" style="color:green; margin:auto;font-size: 20px">
+                <h:outputLabel value="Last Name: "/>
+                <h:inputText required="true" 
+                             requiredMessage="Last name is required"
+                             value="#{showtimeBean.lastname}"/>
+                
+                <h:outputLabel value="First Name: "/>
+                <h:inputText required="true" 
+                             requiredMessage="First name is required"
+                             value="#{showtimeBean.firstname}"/> 
+            </h:panelGrid>
+            
+            <h:panelGrid columns="4" style="margin:auto;font-size: 20px">
+                <h:outputLabel value="Card Number: "/>
+                <h:inputText required="true"
+                             validatorMessage="Invalid Card number, 16 digits required"
+                             requiredMessage="Card number is required"
+                             value="#{showtimeBean.lastname}">
+                    <f:validateRegex pattern="[\d]{16}"/>
+                </h:inputText>
+                <h:selectOneRadio required="true" 
+                                  requiredMessage="Mask is required!">
+                    <f:selectItem itemValue="I agree to wear a face mask"/>
+                </h:selectOneRadio>   
+                <h:outputLabel style="color:red" value="I agree to wear a face mask"/>
+            </h:panelGrid>
+            <h:commandButton style="font-size:20px; margin-top: 20px" value="Order Tickets" action="#{showtimeBean.setSuccessMessage()}"/>
+            <br/><h:outputText style="color:red;font-size:20px" value="#{showtimeBean.successMessage}"/>
+        </h:form>
+    </h:body>
+</html>
+
