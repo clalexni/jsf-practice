@@ -6,9 +6,9 @@
 ### Java files:
 1. cdi package
 	- MainPageBean.java:   cdi bean servers as an interface between MainPage and ejb.
-	- MoviePageBean.java:  cdi bean servers as an interface between MoviePage and ejb.
-	- ShowtimeBean.java:   cdi bean servers as an interface between ShowtimePage and ejb.
-	- TheaterPageBean.java:cdi bean servers as an interface between TheaterPage and ejb.
+	- MoviePageBean.java
+	- ShowtimeBean.java
+	- TheaterPageBean.java
 
 
 2. ejb package
